@@ -81,21 +81,25 @@ c3=ir.sepal_width.quantile(0.75)
 iq=c3-c1
 print(c3)
 ```
-![image](https://github.com/Yamunaasri/exno1/assets/115707860/ec87fae6-5baa-4b0a-9c09-1c4e1c893ad8)
+![image](https://github.com/varshxnx/exno1ds/assets/122253525/bcec41dd-05e5-4a22-8c0c-bb851b5c94f2)
+
 ```
 rid=ir[((ir.sepal_width<(c1-1.5*iq))|(ir.sepal_width>(c3+1.5*iq)))]
 rid['sepal_width']
 ```
-![image](https://github.com/Yamunaasri/exno1/assets/115707860/a6e1a0ff-84f2-47ae-a39a-f8037875611e)
+![image](https://github.com/varshxnx/exno1ds/assets/122253525/95f00e8a-51af-46de-9b0e-f9286b7fd965)
+
 ```
 delid=ir[~((ir.sepal_width<(c1-1.5*iq))|(ir.sepal_width>(c3+1.5*iq)))]
 delid
 ```
-![image](https://github.com/Yamunaasri/exno1/assets/115707860/8becd206-ddc7-4a58-85fc-b9cb1b63a53f)
+![image](https://github.com/varshxnx/exno1ds/assets/122253525/fa860947-8c62-4f58-8bf1-c4ee3e02b3cd)
+
 ```
 sns.boxplot(x='sepal_width',data=delid)
 ```
-![image](https://github.com/Yamunaasri/exno1/assets/115707860/53b3e4cc-9961-4b92-af15-afa9dca57f97)
+![image](https://github.com/varshxnx/exno1ds/assets/122253525/7ed64f50-d259-4d1c-955e-207e7cdb0b36)
+
 
 ## Z SCORE
 ```
@@ -106,7 +110,8 @@ import scipy.stats as stats
 dataset=pd.read_csv("/content/heights.csv")
 dataset
 ```
-![image](https://github.com/Yamunaasri/exno1/assets/115707860/65296f84-d620-42a2-91e9-825f3313e72c)
+![image](https://github.com/varshxnx/exno1ds/assets/122253525/5cfe76e4-395f-4cad-b8ac-8cd5192db7d4)
+
 ```
 df = pd.read_csv("heights.csv")
 q1 = df['height'].quantile(0.25)
@@ -117,27 +122,31 @@ q3 = df['height'].quantile(0.75)
 iqr = q3-q1
 iqr
 ```
-![image](https://github.com/Yamunaasri/exno1/assets/115707860/b9d6b692-7f29-4303-8e22-335186cf6ae3)
-```
+![image](https://github.com/varshxnx/exno1ds/assets/122253525/29084c47-bfbe-425d-bc93-245eb1eed4ab)
+
 low = q1 - 1.5*iqr
 low
 ```
-![image](https://github.com/Yamunaasri/exno1/assets/115707860/3f341bea-42c2-4cbd-928a-9e1fa576cfaf)
+![image](https://github.com/varshxnx/exno1ds/assets/122253525/19e6066d-ef27-4049-a93f-7bd1df06633f)
+
 ```
 high = q3 + 1.5*iqr
 high
 ```
-![image](https://github.com/Yamunaasri/exno1/assets/115707860/ae80602f-3344-443c-a723-d5cef7928731)
+![image](https://github.com/varshxnx/exno1ds/assets/122253525/c7625ca0-6739-48dd-a59d-c38889a01580)
+
 ```
 df1 = df[((df['height'] >=low)& (df['height'] <=high))]
 df1
 ```
-![image](https://github.com/Yamunaasri/exno1/assets/115707860/3e5ce1e1-567e-4253-82bb-192c04024d35)
+![image](https://github.com/varshxnx/exno1ds/assets/122253525/78cc2be6-bc3e-40e9-8291-5032adaad95e)
+
 ```
 z = np.abs(stats.zscore(df['height']))
 z
 ```
-![image](https://github.com/Yamunaasri/exno1/assets/115707860/ef207f0d-fcc0-452e-bbd3-5f3c48a03515)
+![image](https://github.com/varshxnx/exno1ds/assets/122253525/3bec7e24-556d-4e84-a59f-3073116dd2fb)
+
 
 # Result
 Thus the outliers are detected and removed in the given file and the final data set is saved into the file.
