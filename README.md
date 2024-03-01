@@ -123,7 +123,7 @@ iqr = q3-q1
 iqr
 ```
 ![image](https://github.com/varshxnx/exno1ds/assets/122253525/29084c47-bfbe-425d-bc93-245eb1eed4ab)
-
+```
 low = q1 - 1.5*iqr
 low
 ```
